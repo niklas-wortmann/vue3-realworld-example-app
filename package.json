@@ -6,8 +6,9 @@
   "type": "module",
   "scripts": {
     "prepare": "simple-git-hooks",
-    "dev": "vite",
+    "dev": "vite --port 5173",
     "build": "vite build",
+    "build&serve": "vite build && vite preview --port 4137",
     "serve": "vite preview --port 4137",
     "type-check": "vue-tsc --noEmit",
     "lint": "eslint --fix .",
