@@ -6,6 +6,7 @@
           conduit
         </h1>
         <p>A place to share your knowledge.</p>
+        <p v-if="isDemoEnabled">With WebStorm</p>
       </div>
     </div>
 
@@ -40,6 +41,9 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
 import ArticlesList from 'src/components/ArticlesList.vue'
 import PopularTags from 'src/components/PopularTags.vue'
+
+const isDemoEnabled = ref(__WS_DEMO__)
 </script>

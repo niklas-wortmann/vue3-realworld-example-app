@@ -1,5 +1,6 @@
 /// <reference types="vitest" />
 
+import process from 'node:process'
 import { URL, fileURLToPath } from 'node:url'
 import vue from '@vitejs/plugin-vue'
 import analyzer from 'rollup-plugin-analyzer'
@@ -11,6 +12,9 @@ export default defineConfig({
     alias: {
       src: fileURLToPath(new URL('src', import.meta.url)),
     },
+  },
+  define: {
+    __WS_DEMO__: process.env.__WS_DEMO__ || false,
   },
   plugins: [
     vue(),
